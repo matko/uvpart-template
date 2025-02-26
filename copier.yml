@@ -1,0 +1,5 @@
+_tasks:
+  - nix flake lock
+  - nix run .#uv-lock
+  - git init .
+  - git add pyproject.toml "{{ _folder_name.replace("-", "_") }}" flake.nix flake.lock uv.lock .gitignore .envrc README.md
