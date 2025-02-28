@@ -30,6 +30,10 @@
       inputs.uv2nix.follows = "uv2nix";
       inputs.pyproject-build-systems.follows = "pyproject-build-systems";
     };
+    uvpart-fixups = {
+      url = "github:matko/uvpart-fixups";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -39,6 +43,7 @@
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.uvpart.flakeModule
+        inputs.uvpart-fixups.flakeModule
       ];
       systems = [
         "x86_64-linux"
