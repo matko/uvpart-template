@@ -11,4 +11,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-hello = "{{_folder_name}}.main:main"
+hello = "{{_folder_name.replace("-", "_")}}.main:main"
