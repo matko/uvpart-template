@@ -11,7 +11,7 @@
     };
 
     uv2nix = {
-      url = "github:pyproject-nix/uv2nix";
+      url = "github:pyproject-nix/uv2nix/7ae60727d4fc2e41aefd30da665e4f92ba8298f1";
       inputs.pyproject-nix.follows = "pyproject-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -55,6 +55,7 @@
         {
           pkgs,
           config,
+          inputs',
           ...
         }:
         {
@@ -75,6 +76,7 @@
           uvpart = {
             workspaceRoot = ./.;
             extraPackages = [ pkgs.hello ];
+            uv = inputs'.uv2nix.packages.uv-bin;
           };
         };
     };
